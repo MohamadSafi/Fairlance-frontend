@@ -62,7 +62,7 @@ export const Menu = styled.ul`
   padding: 0;
   overflow: hidden;
 
-  .name-head{
+  .name-head {
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
@@ -77,6 +77,7 @@ export const Menu = styled.ul`
 
     & > .dropdown-content {
       display: none;
+      right: 6rem;
       position: absolute;
       background-color: #f9f9f9;
       min-width: 160px;

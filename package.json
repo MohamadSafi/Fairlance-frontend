@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^1.4.0",
     "big-number": "^2.0.0",
+    "connectkit": "^1.5.3",
     "ethers": "^5.7.2",
     "http-proxy-middleware": "^2.0.6",
     "moment": "^2.29.4",
@@ -22,7 +23,10 @@
     "react-select": "^5.7.3",
     "react-spinners": "^0.13.8",
     "react-toastify": "^8.0.0",
-    "styled-components": "^6.0.0-rc.3"
+    "styled-components": "^6.0.0-rc.3",
+    "viem": "^1.15.4",
+    "view": "^1.1.1",
+    "wagmi": "^1.4.3"
   },
   "scripts": {
     "start": "react-scripts start --openssl-legacy-provider",

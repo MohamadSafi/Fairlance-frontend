@@ -3,10 +3,14 @@ import logo from '../../assets/images/logo-new.png';
 import { Link } from 'react-router-dom';
 import { StyledNav, Menu } from './style';
 import AuthContext from '../../context/AuthContext';
+import { useAccount } from 'wagmi';
+import { ConnectKitButton } from 'connectkit';
+import { ReactComponent as Profilelogo } from '../../assets/svg/profile.svg';
 
 const NavBar = ({ notfixed }) => {
-  const { userFirstName, logout, userLastName } = useContext(AuthContext);
   const { userID } = useContext(AuthContext);
+
+  const { isConnected } = useAccount();
 
   return (
     <StyledNav id='nav-bar' $notfixed={notfixed}>
@@ -29,13 +33,17 @@ const NavBar = ({ notfixed }) => {
             Add job
           </Link>
         </li>
-        {userFirstName ? (
+        {isConnected ? (
           <>
             <li>
               <Menu>
                 <div className='dropdown'>
                   <button className='dropbtn'>
-                    <span className='name-head'>{userFirstName} {userLastName}</span> <i className='fa-solid fa-caret-down'></i>
+                    {/* <span className='name-head'>
+                      {userFirstName} {userLastName} admin
+                    </span>{' '} */}
+                    {/* <i className='fa-solid fa-caret-down'></i> */}
+                    <Profilelogo />
                   </button>
                   <div className='dropdown-content'>
                     <li>
@@ -48,7 +56,7 @@ const NavBar = ({ notfixed }) => {
                       <Link to={`/profile/${userID}`}>My Profile</Link>
                     </li>
                     <li>
-                      <button onClick={() => logout()}>Log out</button>
+                      <ConnectKitButton mode='light' />
                     </li>
                   </div>
                 </div>
@@ -57,7 +65,7 @@ const NavBar = ({ notfixed }) => {
           </>
         ) : (
           <>
-            <li>
+            {/* <li>
               <Link to='/login' state={'/'}>
                 Log in
               </Link>
@@ -66,7 +74,8 @@ const NavBar = ({ notfixed }) => {
               <Link to='/signup' state={'/'}>
                 Sign up
               </Link>
-            </li>
+            </li> */}
+            <ConnectKitButton mode='light' />
           </>
         )}
       </div>

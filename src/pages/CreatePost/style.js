@@ -176,6 +176,7 @@ export const CreatePostStyled = styled.div`
       white-space: pre-wrap;
       margin: 0.5rem 1rem 1rem 1rem;
       height: 60%;
+      width: 80%;
       overflow: scroll;
     }
   }

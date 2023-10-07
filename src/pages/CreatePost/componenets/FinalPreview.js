@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Button from '../../../components/Button/Button';
 import Tags from '../../../components/Tags/Tags';
+import Submit from '../../../assets/svg/Submit.svg';
 
 const FinalPreview = ({ handleSubmit, prevForm, title, body, tags, range, deadline, category }) => {
   const [complete, setComplete] = useState(false);
@@ -55,7 +56,10 @@ const FinalPreview = ({ handleSubmit, prevForm, title, body, tags, range, deadli
     <>
       {complete ? (
         <form className='final-preview'>
-          <h2>Final Preview</h2>
+          <h2 style={{ display: 'flex', alignItems: 'center' }}>
+            <img src={Submit} alt='' /> Final Preview
+          </h2>
+
           <h3>{title}</h3>
           <span>{categoryName[jobCategory]}</span>
           <p>{body}</p>

@@ -10,11 +10,11 @@ export const GlobalStyles = createGlobalStyle`
 
 body {
     background-color: #F2FAFA;
-    scrollbar-width: none;
+    /* scrollbar-width: none; */
 }
 
 body::-webkit-scrollbar {
-    display: none;
+    /* display: none; */
 }
 
 .seperate {

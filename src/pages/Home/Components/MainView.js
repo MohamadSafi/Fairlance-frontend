@@ -1,6 +1,6 @@
 import React from 'react';
 import searching from '../../../assets/svg/searching.svg';
-import Poster from '../../../components/Poster/Poster';
+import Poster from '../../../components/Poster/RightPoster';
 import SearchBar from '../../../components/SearchBar/SearchBar';
 import Button from '../../../components/Button/Button';
 import { StyledHire } from '../style';

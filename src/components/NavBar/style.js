@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 
 export const StyledNav = styled.ul`
   background-color: #fff;
-  box-shadow: 1px 2px 8px 0px rgba(30, 136, 229, 0.1);
+  box-shadow: 1px 10px 8px 0px rgba(30, 136, 229, 0.1);
   position: ${(props) => (props.$notfixed ? 'static' : 'fixed')};
   width: 100%;
   z-index: 1;

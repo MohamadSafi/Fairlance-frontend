@@ -34,8 +34,8 @@ const config = createConfig(
 
     // Optional
     appDescription: '5736574953f99877cc682d96dd82bdf0',
-    appUrl: 'fairlance.com',
-    appIcon: 'https://fairlance.com/logo.png', // your app's icon, no bigger than 1024x1024px (max. 1MB)
+    appUrl: 'fairlance.ru',
+    appIcon: 'https://fairlance.com/logo.png',
   }),
 );
 

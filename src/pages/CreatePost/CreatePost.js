@@ -10,6 +10,11 @@ import IntroForm from './componenets/IntroForm';
 import AuthContext from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import TitleADD from '../../assets/svg/Title.svg';
+import Description from '../../assets/svg/description.svg';
+import Tags from '../../assets/svg/tags.svg';
+import Pricing from '../../assets/svg/pricing.svg';
+import Preview from '../../assets/svg/preview.svg';
 
 const TAGS_URL = 'http://localhost:3030/tags';
 
@@ -104,11 +109,26 @@ const CreatePost = () => {
       <CreatePostStyled>
         <StyledProgress>
           <div id='elements'>
-            <div>Title</div>
-            <div>Description</div>
-            <div>Media & Tags</div>
-            <div>Pricing</div>
-            <div>Final Preview</div>
+            <div>
+              <img src={TitleADD} alt='' id='icon' />
+              Title
+            </div>
+            <div>
+              <img src={Description} alt='' id='icon' />
+              Description
+            </div>
+            <div>
+              <img src={Tags} alt='' id='icon' />
+              Media & Tags
+            </div>
+            <div>
+              <img src={Pricing} alt='' id='icon' />
+              Pricing
+            </div>
+            <div>
+              <img src={Preview} alt='' id='icon' />
+              Final Preview
+            </div>
           </div>
         </StyledProgress>
         <div>

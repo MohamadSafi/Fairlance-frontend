@@ -3,6 +3,7 @@ import Button from '../../../components/Button/Button';
 import { StyledPost } from '../style';
 import logo from '../../../assets/images/logo-new.png';
 import { Link } from 'react-router-dom';
+import { posts } from '../../../components/HorizontalBlogs/mcok-recent-posts.json';
 
 const RecentPost = ({ post, done }) => {
   return (

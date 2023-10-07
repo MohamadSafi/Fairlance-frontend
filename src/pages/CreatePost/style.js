@@ -190,6 +190,10 @@ export const CreatePostStyled = styled.div`
 export const StyledProgress = styled.div`
   padding-top: 2rem;
   #elements {
+    display: flex;
+
+    flex-direction: column;
+
     z-index: 100;
     position: relative;
     .active-border {
@@ -201,6 +205,8 @@ export const StyledProgress = styled.div`
     }
   }
   #elements div {
+    display: flex;
+    align-items: flex-end;
     font-weight: 700;
     font-size: 1rem;
     border-right: solid 4px #ccc;
@@ -224,5 +230,9 @@ export const StyledProgress = styled.div`
     height: 100%;
     width: 2px;
     background-color: red;
+  }
+  #icon {
+    margin-right: 10px;
+    padding-top: 4px;
   }
 `;

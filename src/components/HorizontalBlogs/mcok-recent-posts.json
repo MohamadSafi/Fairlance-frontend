@@ -1,0 +1,53 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "First post title",
+      "description": "I am the description of what a bullshit means.",
+      "price_min": 10,
+      "price_max": 20
+    },
+    {
+      "id": 2,
+      "title": "Second post title",
+      "description": "This is another example description.",
+      "price_min": 15,
+      "price_max": 25
+    },
+    {
+      "id": 3,
+      "title": "Third post title",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "price_min": 5,
+      "price_max": 15
+    },
+    {
+      "id": 4,
+      "title": "Fourth post title",
+      "description": "Yet another description for a post.",
+      "price_min": 8,
+      "price_max": 18
+    },
+    {
+      "id": 5,
+      "title": "Fifth post title",
+      "description": "Description of the fifth post.",
+      "price_min": 12,
+      "price_max": 22
+    },
+    {
+      "id": 6,
+      "title": "Sixth post title",
+      "description": "A unique description for the sixth post.",
+      "price_min": 7,
+      "price_max": 17
+    },
+    {
+      "id": 7,
+      "title": "Seventh post title",
+      "description": "The description for the seventh post.",
+      "price_min": 11,
+      "price_max": 21
+    }
+  ]
+}

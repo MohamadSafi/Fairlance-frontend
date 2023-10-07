@@ -7,6 +7,13 @@ export const StyledNav = styled.ul`
   width: 100%;
   z-index: 1;
   top: 0;
+
+  .profile-picture {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+
   #nav-container {
     display: flex;
     align-items: center;

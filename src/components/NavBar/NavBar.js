@@ -4,13 +4,17 @@ import { Link } from 'react-router-dom';
 import { StyledNav, Menu } from './style';
 import AuthContext from '../../context/AuthContext';
 import { useAccount } from 'wagmi';
-import { ConnectKitButton } from 'connectkit';
+import { Avatar, ConnectKitButton } from 'connectkit';
 import { ReactComponent as Profilelogo } from '../../assets/svg/profile.svg';
+import { useEnsAvatar } from 'wagmi';
 
 const NavBar = ({ notfixed }) => {
   const { userID } = useContext(AuthContext);
 
   const { isConnected } = useAccount();
+  const { data, isError, isLoading } = useEnsAvatar({
+    name: 'jxom.eth',
+  });
 
   return (
     <StyledNav id='nav-bar' $notfixed={notfixed}>
@@ -39,11 +43,8 @@ const NavBar = ({ notfixed }) => {
               <Menu>
                 <div className='dropdown'>
                   <button className='dropbtn'>
-                    {/* <span className='name-head'>
-                      {userFirstName} {userLastName} admin
-                    </span>{' '} */}
-                    {/* <i className='fa-solid fa-caret-down'></i> */}
                     <Profilelogo />
+                    {/* <img src={data} alt='' className='profile-picture' /> */}
                   </button>
                   <div className='dropdown-content'>
                     <li>

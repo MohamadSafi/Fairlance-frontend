@@ -26,7 +26,7 @@ import { ConnectKitProvider, getDefaultConfig } from 'connectkit';
 const config = createConfig(
   getDefaultConfig({
     // Required API Keys
-    alchemyId: process.env.ALCHEMY_ID, // or infuraId -iTrYGDpZuNF-njoamaBHPRU1tF2LebT
+    alchemyId: process.env.ALCHEMY_ID,
     walletConnectProjectId: process.env.WALLETCONNECT_PROJECT_ID,
 
     // Required

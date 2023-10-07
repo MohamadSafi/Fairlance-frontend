@@ -53,9 +53,9 @@ const NavBar = ({ notfixed }) => {
                     <li>
                       <Link to={`/offers`}>My Offers</Link>
                     </li>
-                    <li>
+                    {/* <li>
                       <Link to={`/profile/${userID}`}>My Profile</Link>
-                    </li>
+                    </li> */}
                     <li>
                       <ConnectKitButton mode='light' />
                     </li>

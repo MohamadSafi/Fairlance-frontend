@@ -36,3 +36,6 @@ Welcome to the frontend part of **FairLance**
 - **ConnectKit**: Library to Integrate wallet Connection in React
 - **Eathers.js**: Library aims to be a complete and compact library for interacting with the Ethereum Blockchain and its ecosystem.
 
+## 🎥 Demo
+[![Click here to watch the demo](https://img.youtube.com/vi/Z_tnz0zXqTw/0.jpg)](https://www.youtube.com/watch?v=Z_tnz0zXqTw)
+

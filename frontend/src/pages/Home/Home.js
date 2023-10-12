@@ -20,8 +20,8 @@ const Home = () => {
     <div>
       <NavBar />
       <MainView />
-      {isConnected ? <Recents URL={RECENT_POSTS_URL} done={false} /> : <></>}
-      <Options />
+      {isConnected ? <Recents URL={RECENT_POSTS_URL} done={false} /> : <Options />}
+
       <WhyUs />
       <Footer />
     </div>

@@ -9,53 +9,48 @@ import { useParams } from 'react-router-dom';
 import Request from '../../utils/Request';
 
 const MyApplications = () => {
-  const { authToken } = useContext(AuthContext);
   const [applications, setApplications] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const { userID } = useParams();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch(`/api/users/${userID}/applications/`, Request('GET', '', authToken))
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setApplications(data);
-        setLoading(false);
-      })
-      .catch(() => {
-        for (let i = 0; i < 3; i++) {
-          setApplications([]);
-        }
-        setLoading(false);
-      });
-  }, [setApplications, authToken, userID]);
+    const load = () => {
+      let applications = JSON.parse(localStorage.getItem('applications') || '[]').map(
+        (value, idx, _) => JSON.parse(value),
+      );
+      setApplications(applications);
+      setTimeout(() => setLoading(false), 2000);
+    };
+    setLoading(true);
+    load();
+  }, [setApplications]);
 
   return (
     <div>
       <NavBar notfixed={true} />
       <StyledMyApplications>
-        <h1>My Applications</h1>
-        {!loading || applications.length ? (
-          applications.map((application, idx) => {
-            return <MyApplication application={application} idx={idx} key={idx}></MyApplication>;
-          })
-        ) : (
-          <StyledLoading className='loading-container'>
-            <div>
-              <Code className='loading' />
-            </div>
-            <div>
-              <Code className='loading' />
-            </div>
-            <div>
-              <Code className='loading' />
-            </div>
-            <div>
-              <Code className='loading' />
-            </div>
-          </StyledLoading>
-        )}
+        <div style={{ height: '70vh' }}>
+          <h1>My Applications</h1>
+          {!loading || applications.length ? (
+            applications.map((application, idx) => {
+              return <MyApplication application={application} idx={idx} key={idx}></MyApplication>;
+            })
+          ) : (
+            <StyledLoading className='loading-container'>
+              <div>
+                <Code className='loading' />
+              </div>
+              <div>
+                <Code className='loading' />
+              </div>
+              <div>
+                <Code className='loading' />
+              </div>
+              <div>
+                <Code className='loading' />
+              </div>
+            </StyledLoading>
+          )}
+        </div>
       </StyledMyApplications>
       <Footer />
     </div>

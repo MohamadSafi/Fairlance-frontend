@@ -10,32 +10,18 @@ const Posts = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const req = {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        Authorization: `token ${authToken}`,
-        'ngrok-skip-browser-warning': 'true',
-      },
-    };
     const load = async () => {
-      await fetch('/api/projects/', req)
-        .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
-          setPosts(data);
-        })
-        .catch(() => {
-          for (let i = 0; i < 3; i++) {
-            setPosts([]);
-          }
-        });
-      setLoading(false);
+      let posts = JSON.parse(localStorage.getItem('jobs')).map((value, idx, _) =>
+        JSON.parse(value),
+      );
+      setPosts(posts);
+      setTimeout(() => {
+        setLoading(false);
+      }, 4000);
     };
+    setLoading(true);
     load();
-  }, [setPosts, authToken]);
+  }, [setPosts]);
 
   return (
     <StyledPosts>

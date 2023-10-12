@@ -1,14 +1,14 @@
 import React from 'react';
 import './style';
 import NavBar from '../../components/NavBar/NavBar';
-import MainView from './Components/MainView';
 import Footer from '../../components/Footer/Footer';
+import Balance from './Components/Balance';
 
 const Profile = () => {
   return (
     <div>
       <NavBar />
-      <MainView />
+      <Balance />
       <Footer />
     </div>
   );

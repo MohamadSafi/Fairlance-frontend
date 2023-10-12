@@ -5,7 +5,7 @@ import { StyledBlogs } from './style';
 const HorizontalBlogs = ({ posts, postIdx, previousPost, nextPost, done }) => {
   return (
     <StyledBlogs>
-      {done ? <h2>Recently delivered projects:</h2> : <h2>Recently posted oppurtunities:</h2>}
+      {done ? <h2>Recently delivered projects:</h2> : <h2>Recommended For you:</h2>}
       <div className='recents-panel'>
         <button className={postIdx === 0 ? 'disabled' : ''} onClick={previousPost}>
           <i className='fa-solid fa-arrow-left'></i>

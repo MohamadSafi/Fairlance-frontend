@@ -34,7 +34,7 @@ const CreatePost = () => {
   const [deadline, setDeadline] = useState(new Date());
   const [description, setDescription] = useState('');
   const [tags, setTags] = useState([]);
-  const clickedOption = (name) => {
+  const clickedOption = name => {
     const tmp = category;
     for (let key in category) {
       tmp[key] = false;
@@ -42,7 +42,7 @@ const CreatePost = () => {
     tmp[name] = true;
     setCategory({ ...tmp });
   };
-  const nextForm = (e) => {
+  const nextForm = e => {
     setFormIdx(formIdx + 1);
     for (let i = 1; i <= formIdx + 1; i++) {
       const prog = document.querySelector(`#elements :nth-child(${i})`);
@@ -53,7 +53,7 @@ const CreatePost = () => {
     }
     e.preventDefault();
   };
-  const prevForm = (e) => {
+  const prevForm = e => {
     setFormIdx(formIdx - 1);
     for (let i = 1; i <= formIdx + 1; i++) {
       const prog = document.querySelector(`#elements :nth-child(${i})`);
@@ -67,36 +67,32 @@ const CreatePost = () => {
     }
     e.preventDefault();
   };
-  const addFile = (file) => {
+  const addFile = file => {
     console.log(file);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
     const tags_req = [];
     for (let i = 0; i < tags.length; i++) {
       tags_req.push({ skill_id: tags[i].value });
     }
-    const req = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        Authorization: `token ${authToken}`,
-      },
-      body: JSON.stringify({
-        title: title,
-        description: description,
-        deadline: deadline,
-        price_min: range[0],
-        price_max: range[1],
-        skills: tags_req,
-      }),
-    };
+    const jobs = JSON.parse(localStorage.getItem('jobs') || '[]');
+    let job_id = jobs.length + 1;
+    const data = JSON.stringify({
+      id: job_id,
+      title: title,
+      description: description,
+      deadline: deadline,
+      price_min: range[0],
+      price_max: range[1],
+      skills: tags_req,
+    });
+
     try {
-      const res = await fetch('/api/projects/add/', req);
-      const ret = await res.json();
-      navigate(`/post/${ret.project_id}`);
+      jobs.push(data);
+      localStorage.setItem('jobs', JSON.stringify(jobs));
+      navigate(`/post/${job_id}`);
       toast('post created successfully');
     } catch (e) {
       toast.error('something went wrong please recheck');

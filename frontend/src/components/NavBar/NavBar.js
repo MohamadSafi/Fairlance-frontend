@@ -48,14 +48,14 @@ const NavBar = ({ notfixed }) => {
                   </button>
                   <div className='dropdown-content'>
                     <li>
-                      <Link to={`/users/${userID}/applications`}>My Applications</Link>
+                      <Link to={`/applications`}>My Applications</Link>
                     </li>
                     <li>
                       <Link to={`/offers`}>My Offers</Link>
                     </li>
-                    {/* <li>
-                      <Link to={`/profile/${userID}`}>My Profile</Link>
-                    </li> */}
+                    <li>
+                      <Link to={`/profile`}>My Profile</Link>
+                    </li>
                     <li>
                       <ConnectKitButton mode='light' />
                     </li>
